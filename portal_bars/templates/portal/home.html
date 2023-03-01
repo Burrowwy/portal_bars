@@ -61,11 +61,6 @@ img {vertical-align: middle;}
   text-align: center;
 }
 
-
-
-
-
-
 .active, .dot:hover {
   background-color: #717171;
 }
@@ -127,6 +122,7 @@ img {vertical-align: middle;}
 }
 
  p span {
+     color: white;
     position: absolute;
     left: 50%;/*позиция слева*/
     font-size: 1.2em;/*размер шрифта*/
@@ -236,16 +232,19 @@ img {vertical-align: middle;}
   <a  href="{% url 'deliver' %}">Доставка</a>
 </div>
 
-<div class="btn☰">
+<div class="btn☰" id="btn☰">
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span>
 </div>
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("btn☰").style.opacity = "0";
+
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("btn☰").style.opacity = "1";
 }
 var slideIndex = 1;
 showSlides(slideIndex);

@@ -7,9 +7,6 @@
 
     <title></title>
 </head>
-<style>
-
-</style>
 
 <body>
 {% for project in projects %}
@@ -24,16 +21,19 @@
   <a  href="{% url 'restaurant' %}">Рестораны</a>
 </div>
 
-<div class="btn☰">
+<div class="btn☰" id="btn☰">
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span>
 </div>
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("btn☰").style.opacity = "0";
+
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("btn☰").style.opacity = "1";
 }
 </script>
 
