@@ -12,10 +12,12 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  top: 500px;
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+  position: absolute;
+
+     top: 50%;
+    left: 50%;
+    margin-top: -0px;
+    margin-left: -340px;
 }
 
 /* Next & previous buttons */
@@ -62,17 +64,7 @@ img {vertical-align: middle;}
 
 
 
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 500px 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
+
 
 .active, .dot:hover {
   background-color: #717171;
@@ -141,6 +133,27 @@ img {vertical-align: middle;}
     text-transform: uppercase;/*большие буквы*/
     transform-origin: 0 100px;/*точка исхода трансформации*/
 }
+ input[type=text] {
+
+     position: absolute;
+     top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -200px;
+
+    width: 400px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+
+}
+
+
 
  @keyframes animate {
     0%
@@ -152,6 +165,14 @@ img {vertical-align: middle;}
         transform: rotate(0deg);
     }
 }
+ .gallery2 {
+     align-content: center;
+     overflow: hidden;
+     width: 680px;
+     height: 360px;
+
+ }
+
 
 
 /* On smaller screens, decrease text size */
@@ -173,27 +194,25 @@ img {vertical-align: middle;}
     </div>
     </div>
 </div>
-{% for project in projects %}
 
-<img src="{{ project.image.url }}"height="40" width="40" alt="">
-
-{% endfor %}
-
+<form>
+  <input type="text" name="search" placeholder="Поиск заведений...">
+</form>
 
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="{% static 'img/image 3.png' %}"height="500" style="width: 100%">
+  <img  class="gallery2" src="{% static 'img/image 3.png' %}">
   <div class="text">Caption Text</div>
 </div>
 
 <div class="mySlides fade">
-  <img src="{% static 'img/image 4.png' %}" height="500" style="width: 100%">
+  <img class="gallery2" src="{% static 'img/image 4.png' %}" >
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
-  <img src="{% static 'img/image 1.png' %}" height="500" style="width: 100%">
+  <img class="gallery2" src="{% static 'img/image 1.png' %}" >
   <div class="text">Caption Three</div>
 </div>
 
