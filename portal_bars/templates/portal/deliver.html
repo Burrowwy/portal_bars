@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div lang="">
+
 <head>
 {% load static %}
     <link rel="stylesheet" href="{% static '/style.css' %}">
@@ -7,43 +7,42 @@
 
     <title></title>
 </head>
-<body>
-<div>
-{% for project in projects %}
-<a href="{% url 'home' %}">
-<img style="position: absolute;left: 50px;top: 40px;" src="{{ project.image.url }}"height="40" width="40" alt="">
-</a>
-{% endfor %}
-</div>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a  href="{% url 'home' %}">Главная</a>
-  <a  href="{% url 'restaurant' %}">Рестораны</a>
-</div>
-<div class="btn☰" id="btn☰">
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span>
-</div>
+    <div>
+        {% for project in projects %}
+            <a href="{% url 'home' %}">
+                <img style="position: absolute;left: 50px;top: 40px;" src="{% static 'img/home.png' %}"height="30" width="35" alt="">
+            </a>
+        {% endfor %}
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a  href="{% url 'home' %}">Главная</a>
+        <a  href="{% url 'restaurant' %}">Рестораны</a>
+    </div>
+    <div class="btn☰" id="btn☰">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span>
+    </div>
 
 
     <div class="container">
         <a href="https://www.w3docs.com/" class="button">Заказать доставку на дом</a>
         <div class="container-text">
-            <div>Помощь в выборе подходящего меню</div>
+            <div><strong>Помощь в выборе подходящего меню</strong></div>
         </div>
     </div>
 
 
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("btn☰").style.opacity = "0";
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("btn☰").style.opacity = "0";
 
-}
+        }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("btn☰").style.opacity = "1";
-}
-</script>
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("btn☰").style.opacity = "1";
+        }
+    </script>
 
 </body>

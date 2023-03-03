@@ -181,7 +181,7 @@ img {vertical-align: middle;}
 
 {% load static %}
 
-<body style="background-image: url('{% static 'img/image 1.png' %}')">
+<body>
 <div class="body1">
     <div class="circle" style="align-items: center;">
     <div class="logo"></div>
@@ -192,24 +192,26 @@ img {vertical-align: middle;}
 </div>
 
 <form>
-  <input type="text" name="search" placeholder="Поиск заведений...">
+    <label>
+        <input style="color: #f1f1f1" type="text" name="search" placeholder="Поиск заведений...">
+    </label>
 </form>
 
 <div class="slideshow-container">
 
 <div class="mySlides fade">
   <img  class="gallery2" src="{% static 'img/image 3.png' %}">
-  <div class="text">Caption Text</div>
+
 </div>
 
 <div class="mySlides fade">
   <img class="gallery2" src="{% static 'img/image 4.png' %}" >
-  <div class="text">Caption Two</div>
+
 </div>
 
 <div class="mySlides fade">
   <img class="gallery2" src="{% static 'img/image 1.png' %}" >
-  <div class="text">Caption Three</div>
+
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">❮</a>
