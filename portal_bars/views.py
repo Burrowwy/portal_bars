@@ -11,3 +11,11 @@ def deliver(request):
 def restaurant(request):
     projects = Project.objects.all()
     return render(request, 'portal/restaurant.html', {'projects':projects})
+
+def registration(request):
+    projects = Project.objects.all()
+    return render(request, 'portal/registration.html', {'projects':projects})
+
+def authorization(request):
+    projects = Project.objects.all()
+    return render(request, 'portal/authorization.html', {'projects':projects})
