@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static '/style.css' %}">
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
+<head>
+{% load static %}
+    <link rel="stylesheet" href="{% static '/styleauth.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+</head>
+    <div>
+        {% for project in projects %}
+            <a href="{% url 'home' %}">
+                <img style="position: absolute;left: 50px;top: 40px;" src="{% static 'img/home.png' %}"height="30" width="35" alt="">
+            </a>
+        {% endfor %}
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a  href="{% url 'home' %}">Главная</a>
+        <a  href="{% url 'restaurant' %}">Рестораны</a>
+    </div>
+    <div class="btn☰" id="btn☰">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span>
+    </div>
+<body>
+  <div class="login">
+    <div class="login-screen">
+      <div class="app-title">
+        <h1>Авторизация</h1>
+      </div>
+
+      <div class="login-form">
+        <div class="control-group">
+        <input type="text" class="login-field" value="" placeholder="Логин" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+        <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
+        <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+        <a class="btn btn-primary btn-large btn-block" href="#">Войти</a>
+        <a class="login-link" href="{% url 'registration' %}">Еще не зарегистрированы?</a>
+      </div>
+    </div>
+  </div>
 </body>
-</html>
+
+
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("btn☰").style.opacity = "0";
+
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("btn☰").style.opacity = "1";
+        }
+    </script>
+
