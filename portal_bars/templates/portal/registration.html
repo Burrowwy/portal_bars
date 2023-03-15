@@ -2,7 +2,7 @@
 
 <head>
 {% load static %}
-    <link rel="stylesheet" href="{% static '/style.css' %}">
+    <link rel="stylesheet" href="{% static '/styleauth.css' %}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title></title>
@@ -22,6 +22,47 @@
     <div class="btn☰" id="btn☰">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span>
     </div>
+<body>
+  <div class="login">
+    <div class="login-screen">
+      <div class="app-title">
+        <h1>Регистрация</h1>
+      </div>
+
+      <div class="login-form">
+
+          <div class="control-group">
+        <input type="email" class="login-field" value="" placeholder="Почта" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+        <input type="text" class="login-field" value="" placeholder="Логин" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+          <div class="control-group">
+        <input type="text" class="login-field" value="" placeholder="Фамилия" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+          <div class="control-group">
+        <input type="text" class="login-field" value="" placeholder="Имя" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+        <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
+        <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+
+        <a class="btn btn-primary btn-large btn-block" href="#">Зарегистрироваться</a>
+        <a class="login-link" href="#">Забыли ваш пароль?</a>
+      </div>
+    </div>
+  </div>
+</body>
 
 
 
@@ -39,4 +80,3 @@
         }
     </script>
 
-</body>
