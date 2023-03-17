@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static '/styleauth.css' %}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title></title>
+    <title>Авторизация</title>
 </head>
     <div>
         {% for project in projects %}
@@ -18,6 +18,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a  href="{% url 'home' %}">Главная</a>
         <a  href="{% url 'restaurant' %}">Рестораны</a>
+        <a  href="{% url 'deliver' %}">Доставка</a>
     </div>
     <div class="btn☰" id="btn☰">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ </span>
