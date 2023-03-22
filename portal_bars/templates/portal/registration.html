@@ -29,7 +29,7 @@
         <h1>Регистрация</h1>
       </div>
 
-      <div class="login-form">
+      <form action="" class="login-form" id="add-form">
 
           <div class="control-group">
         <input type="email" class="login-field" value="" placeholder="Почта" id="login-name">
@@ -37,17 +37,17 @@
         </div>
 
         <div class="control-group">
-        <input type="text" class="login-field" value="" placeholder="Логин" id="login-name">
+        <input data-max-length="10" data-min-length="4" type="text" class="login-field" value="" placeholder="Логин" id="login-name">
         <label class="login-field-icon fui-user" for="login-name"></label>
         </div>
 
           <div class="control-group">
-        <input type="text" class="login-field" value="" placeholder="Фамилия" id="login-name">
+        <input data-name="name" type="text" class="login-field" value="" placeholder="Фамилия" id="login-name">
         <label class="login-field-icon fui-user" for="login-name"></label>
         </div>
 
           <div class="control-group">
-        <input type="text" class="login-field" value="" placeholder="Имя" id="login-name">
+        <input data-name="name" type="text" class="login-field" value="" placeholder="Имя" id="login-name">
         <label class="login-field-icon fui-user" for="login-name"></label>
         </div>
 
@@ -57,26 +57,16 @@
         </div>
 
 
-        <a class="btn btn-primary btn-large btn-block" href="#">Зарегистрироваться</a>
+        <button type="submit" class="btn btn-primary btn-large btn-block">Зарегистрироваться</button>
         <a class="login-link" href="#">Забыли ваш пароль?</a>
-      </div>
+      </form>
     </div>
   </div>
+    <script type="text/javascript" src={% static "/functions.js" %}></script>
 </body>
 
 
 
 
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("btn☰").style.opacity = "0";
 
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("btn☰").style.opacity = "1";
-        }
-    </script>
 
