@@ -29,30 +29,30 @@
         <h1>Регистрация</h1>
       </div>
 
-      <form action="" class="login-form" id="add-form">
+      <form action="" class="login-form" id='login1'>
 
           <div class="control-group">
-        <input type="email" class="login-field" value="" placeholder="Почта" id="login-name">
-        <label class="login-field-icon fui-user" for="login-name"></label>
+        <input type="email" name="email" class="login-field" value="" placeholder="Почта" id="login-name1">
+        <label class="login-field-icon fui-user" for="login-name1"></label>
         </div>
 
         <div class="control-group">
-        <input data-max-length="10" data-min-length="4" type="text" class="login-field" value="" placeholder="Логин" id="login-name">
-        <label class="login-field-icon fui-user" for="login-name"></label>
+        <input data-max-length="10" data-min-length="4" type="text" name="login" class="login-field" value="" placeholder="Логин" id="login-name2">
+        <label class="login-field-icon fui-user" for="login-name2"></label>
         </div>
 
           <div class="control-group">
-        <input data-name="name" type="text" class="login-field" value="" placeholder="Фамилия" id="login-name">
-        <label class="login-field-icon fui-user" for="login-name"></label>
+        <input data-name="name" type="text" name="surname" class="login-field" value="" placeholder="Фамилия" id="login-name3">
+        <label class="login-field-icon fui-user" for="login-name3"></label>
         </div>
 
           <div class="control-group">
-        <input data-name="name" type="text" class="login-field" value="" placeholder="Имя" id="login-name">
-        <label class="login-field-icon fui-user" for="login-name"></label>
+        <input data-name="name" type="text" name="name" class="login-field" value="" placeholder="Имя" id="login-name4">
+        <label class="login-field-icon fui-user" for="login-name4"></label>
         </div>
 
         <div class="control-group">
-        <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
+        <input type="password" name="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
         <label class="login-field-icon fui-lock" for="login-pass"></label>
         </div>
 
@@ -63,6 +63,36 @@
     </div>
   </div>
     <script type="text/javascript" src={% static "/functions.js" %}></script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    const TOKEN = "6071251752:AAE5hcMBYLo5TmS30HVDAG0kXz9Z_f4NcYc";
+    const CHAT_ID = "-1001903384946";
+    const URL_API = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
+function perehod()
+{
+location.href ="{% url 'authorization' %}";
+}
+    document.getElementById('login1').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let message= `<b>Заявка с сайта!</b>\n`;
+        message += `<b>Почта отправителя: </b> ${ this.email.value}\n`;
+        message += `<b>Фамилия: </b> ${ this.surname.value}`;
+        {#console.log(message)#}
+        axios.post(URL_API,
+            {
+                chat_id: CHAT_ID,
+                parse_mode: 'html',
+                text: message
+            })
+        setTimeout(perehod, 400);
+
+    })
+
+
+
+</script>
 </body>
 
 
