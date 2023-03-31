@@ -74,9 +74,7 @@ function validation(form){
 
     return result;
 }
-document.getElementById('add-form').addEventListener('submit', function (event){
-    event.preventDefault()
-    if (validation(this) === true){
-        alert("Форма заполнена(*_*)")
-    }
-})
+
+
+
+

@@ -29,7 +29,7 @@
         <h1>Регистрация</h1>
       </div>
 
-      <form action="" class="login-form" id='login1'>
+      <form action="" class="login-form" id='add-form'>
 
           <div class="control-group">
         <input type="email" name="email" class="login-field" value="" placeholder="Почта" id="login-name1">
@@ -73,21 +73,21 @@ function perehod()
 {
 location.href ="{% url 'authorization' %}";
 }
-    document.getElementById('login1').addEventListener('submit', function (e) {
+    document.getElementById('add-form').addEventListener('submit', function (e) {
         e.preventDefault();
-
-        let message= `<b>Заявка с сайта!</b>\n`;
-        message += `<b>Почта отправителя: </b> ${ this.email.value}\n`;
-        message += `<b>Фамилия: </b> ${ this.surname.value}`;
-        {#console.log(message)#}
-        axios.post(URL_API,
-            {
-                chat_id: CHAT_ID,
-                parse_mode: 'html',
-                text: message
-            })
-        setTimeout(perehod, 400);
-
+        if (validation(this) === true) {
+            let message = `<b>Заявка с сайта!</b>\n`;
+            message += `<b>Почта отправителя: </b> ${this.email.value}\n`;
+            message += `<b>Фамилия: </b> ${this.surname.value}`;
+            {#console.log(message)#}
+            axios.post(URL_API,
+                {
+                    chat_id: CHAT_ID,
+                    parse_mode: 'html',
+                    text: message
+                })
+            setTimeout(perehod, 400);
+        }
     })
 
 
