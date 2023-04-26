@@ -26,6 +26,7 @@ urlpatterns = [
     path('restaurant', views.restaurant, name='restaurant'),
     path('registration', views.registration, name='registration'),
     path('authorization', views.authorization, name='authorization'),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

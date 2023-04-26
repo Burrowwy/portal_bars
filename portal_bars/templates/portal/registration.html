@@ -29,8 +29,13 @@
         <h1>Регистрация</h1>
       </div>
 
-      <form action="" class="login-form" id='add-form'>
-
+      <form method= "POST" class="login-form" id='add-form' >
+        {% csrf_token %}
+{#          {{ form.email }}<br><br>#}
+{#          {{ form.login }}<br><br>#}
+{#          {{ form.surname }}<br><br>#}
+{#          {{ form.name }}<br><br>#}
+{#          {{ form.password }}<br><br>#}
           <div class="control-group">
         <input type="email" name="email" class="login-field" value="" placeholder="Почта" id="login-name1">
         <label class="login-field-icon fui-user" for="login-name1"></label>
@@ -71,10 +76,10 @@
     const URL_API = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
 function perehod()
 {
-location.href ="{% url 'authorization' %}";
+    form.submit()
+location.href ="{% url 'home' %}";
 }
     document.getElementById('add-form').addEventListener('submit', function (e) {
-        e.preventDefault();
         if (validation(this) === true) {
             let message = `<b>Заявка с сайта!</b>\n`;
             message += `<b>Почта отправителя: </b> ${this.email.value}\n`;
@@ -88,7 +93,10 @@ location.href ="{% url 'authorization' %}";
                 })
             setTimeout(perehod, 400);
         }
+        else  e.preventDefault();
     })
+
+
 
 
 
