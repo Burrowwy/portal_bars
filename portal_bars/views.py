@@ -1,3 +1,5 @@
+from django.contrib import messages
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import Project
@@ -9,15 +11,23 @@ from django.db import IntegrityError
 
 
 def registration(request):
-    profile = Profile.objects.all()
+
     if request.method == "POST":
         login = request.POST.get('login')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        user = User.objects.create_user(username=login, email=email, password=password)
-        user.save()
-        return redirect('home')
-    return render(request, 'portal/registration.html',{"profile": profile})
+        if User.objects.filter(username=login).exists() :
+            messages.error(request, "Уже существует")
+            return render(request, 'portal/registration.html')
+        elif User.objects.filter(email=email).exists():
+            messages.error(request, "Уже существует")
+            return render(request, 'portal/registration.html')
+        else:
+            user = User.objects.create_user(username=login, email=email, password=password)
+            user.save()
+            return redirect('home')
+
+    return render(request, 'portal/registration.html',)
 
 def home(request):
     return render(request, 'portal/home.html',)

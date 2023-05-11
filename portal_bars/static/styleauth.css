@@ -140,3 +140,7 @@ box-shadow: none;
     display: block;
     color: red;
 }
+.error {
+    display: block;
+    color: #e50b0b
+}
