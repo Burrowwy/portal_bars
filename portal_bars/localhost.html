@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-<head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static '/style.css' %}">
+<!-- saved from url=(0022)http://localhost:8000/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" href="./localhost_files/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Главная</title>
 <style>
@@ -103,7 +103,7 @@ img {vertical-align: middle;}
 .logo{
     position: absolute;/*абсолютное позиционирование*/
     width: 67px;
-    height: 84px;     background: url('{% static 'img/logo.png' %}');/*изображение*/
+    height: 84px;     background: url('/static/img/logo.png');/*изображение*/
     background-size: cover;/*картинка пропорционально растянута на весь блок*/
     border-radius: 10%;
     align-items: center;
@@ -180,14 +180,14 @@ img {vertical-align: middle;}
 </style>
 </head>
 
-{% load static %}
+
 
 <body>
 <div class="body1">
     <div class="circle" style="align-items: center;">
     <div class="logo"></div>
     <div class="text1">
-        <p>Luxury Bars&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLuxury Bars  </p>
+        <p><span style="transform:rotate(0deg" )="">L</span><span style="transform:rotate(8.2deg" )="">u</span><span style="transform:rotate(16.4deg" )="">x</span><span style="transform:rotate(24.599999999999998deg" )="">u</span><span style="transform:rotate(32.8deg" )="">r</span><span style="transform:rotate(41deg" )="">y</span><span style="transform:rotate(49.199999999999996deg" )=""> </span><span style="transform:rotate(57.39999999999999deg" )="">B</span><span style="transform:rotate(65.6deg" )="">a</span><span style="transform:rotate(73.8deg" )="">r</span><span style="transform:rotate(82deg" )="">s</span><span style="transform:rotate(90.19999999999999deg" )="">&nbsp;</span><span style="transform:rotate(98.39999999999999deg" )="">&nbsp;</span><span style="transform:rotate(106.6deg" )="">&nbsp;</span><span style="transform:rotate(114.79999999999998deg" )="">&nbsp;</span><span style="transform:rotate(122.99999999999999deg" )="">&nbsp;</span><span style="transform:rotate(131.2deg" )="">&nbsp;</span><span style="transform:rotate(139.39999999999998deg" )="">&nbsp;</span><span style="transform:rotate(147.6deg" )="">&nbsp;</span><span style="transform:rotate(155.79999999999998deg" )="">&nbsp;</span><span style="transform:rotate(164deg" )="">&nbsp;</span><span style="transform:rotate(172.2deg" )="">L</span><span style="transform:rotate(180.39999999999998deg" )="">u</span><span style="transform:rotate(188.6deg" )="">x</span><span style="transform:rotate(196.79999999999998deg" )="">u</span><span style="transform:rotate(204.99999999999997deg" )="">r</span><span style="transform:rotate(213.2deg" )="">y</span><span style="transform:rotate(221.39999999999998deg" )=""> </span><span style="transform:rotate(229.59999999999997deg" )="">B</span><span style="transform:rotate(237.79999999999998deg" )="">a</span><span style="transform:rotate(245.99999999999997deg" )="">r</span><span style="transform:rotate(254.2deg" )="">s</span></p>
     </div>
     </div>
 </div>
@@ -200,18 +200,18 @@ img {vertical-align: middle;}
 
 <div class="slideshow-container">
 
-<div class="mySlides fade">
-  <img  class="gallery2" src="{% static 'img/image 3.png' %}">
+<div class="mySlides fade" style="display: block;">
+  <img class="gallery2" src="./localhost_files/image 3.png">
 
 </div>
 
-<div class="mySlides fade">
-  <img class="gallery2" src="{% static 'img/image 4.png' %}" >
+<div class="mySlides fade" style="display: none;">
+  <img class="gallery2" src="./localhost_files/image 4.png">
 
 </div>
 
-<div class="mySlides fade">
-  <img class="gallery2" src="{% static 'img/image 1.png' %}" >
+<div class="mySlides fade" style="display: none;">
+  <img class="gallery2" src="./localhost_files/image 1.png">
 
 </div>
 
@@ -222,15 +222,16 @@ img {vertical-align: middle;}
 <br>
 
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot active" onclick="currentSlide(1)"></span>
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a  href="{% url 'restaurant' %}">Рестораны</a>
-    <a  href="{% url 'deliver' %}">Доставка</a>
-    <a  href="{% url 'authorization' %}">Войти</a>
+    <a href="http://localhost:8000/restaurant">Рестораны</a>
+    <a href="http://localhost:8000/deliver">Доставка</a>
+    <a href="http://localhost:8000/authorization">Войти</a>
+
 </div>
 
 <div class="btn☰" id="btn☰">
@@ -286,5 +287,5 @@ function showSlides(n) {
     .join("");
 </script>
 
-</body>
-</html>
+
+</body></html>
